@@ -6,5 +6,12 @@ if (module.hot) {
 import '@/style.scss'
 
 let text = 'Hello World!'
+let arr = [1, 2, 3, 4]
+let arrB = arr.map(item => {
+   return item * 2
+})
+
+arr.includes(8)
+console.log(new Set(arrB))
 
 document.getElementById('root').innerText = text
