@@ -1,18 +1,16 @@
 {
-   "presets": [
-      [
-         "env",
-         {
-            "target": {
-               "browsers": [
-                  ">1%",
-                  "last 5 version"
-               ]
+    "presets": [
+        [
+            "env",
+            {
+                "target": {
+                    "browsers": [
+                        ">1%",
+                        "last 5 version"
+                    ]
+                }
             }
-         }
-      ]
-   ],
-   "plugins": [
-      "transform-runtime"
-   ]
+        ]
+    ],
+    "plugins": []
 }

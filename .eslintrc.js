@@ -16,7 +16,7 @@ module.exports = {
     */
    "rules": {
       "strict": "error", //使用严格模式
-      "indent": ["warn", 3, { "SwitchCase": 1 }], // 缩进风格为 3 *
+      "indent": ["warn", 2, { "SwitchCase": 1 }], // 缩进风格为 3 *
       "linebreak-style": ["warn", "unix"], // 换行风格使用Unix *
       "quotes": ["error", "single"], // 引号使用单引号 *
       "semi": ["warn", "never"], // 语句分号结尾 *
