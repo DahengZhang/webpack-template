@@ -5,6 +5,8 @@ if (module.hot) {
 
 import Axios from 'axios'
 import '@/style.scss'
+import appStyle from '@/app.css'
+import publicStyle from '@/public.css'
 
 let text = 'Hello World!'
 let arr = [1, 2, 3, 4]
@@ -14,7 +16,10 @@ let arrB = arr.map(item => {
 
 arr.includes(8)
 console.log(new Set(arrB))
-document.getElementById('root').innerText = text
+document.getElementById('root').innerHTML = `
+<div class='${appStyle.module}'>${text}</div>
+<div class='${publicStyle.module}'>${text}</div>
+`
 
 Axios.get('/api/test').then(function (response) {
   console.log('response', response.data)
