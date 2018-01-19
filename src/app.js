@@ -3,6 +3,7 @@ if (module.hot) {
   module.hot.accept()
 }
 
+import Axios from 'axios'
 import '@/style.scss'
 
 let text = 'Hello World!'
@@ -13,5 +14,11 @@ let arrB = arr.map(item => {
 
 arr.includes(8)
 console.log(new Set(arrB))
-
 document.getElementById('root').innerText = text
+
+Axios.get('/api/test').then(function (response) {
+  console.log('response', response.data)
+  document.getElementById('root').innerHTML = response.data
+}).catch(function (error) {
+  console.log(error)
+})
