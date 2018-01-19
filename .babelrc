@@ -1,16 +1,16 @@
 {
-    "presets": [
-        [
-            "env",
-            {
-                "target": {
-                    "browsers": [
-                        ">1%",
-                        "last 5 version"
-                    ]
-                }
-            }
-        ]
-    ],
-    "plugins": []
+  "presets": [
+    [
+      "env",
+      {
+        "target": {
+          "browsers": [
+            ">1%",
+            "last 5 version"
+          ]
+        }
+      }
+    ]
+  ],
+  "plugins": []
 }
