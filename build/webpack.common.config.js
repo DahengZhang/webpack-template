@@ -6,7 +6,7 @@ module.exports = {
     path: path.resolve(__dirname, '../dist/'),
     publicPath: '',
     filename: 'js/[name].bundle.[hash:6].js',
-    chunkFilename: 'js/[name].chunk.js'
+    chunkFilename: 'js/[name].chunk.[hash:6].js'
   },
   resolve: {
     extensions: ['.js', '.css', '.scss', '.json'],

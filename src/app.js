@@ -3,6 +3,19 @@ if (module.hot) {
   module.hot.accept()
 }
 
+const page = 'b'
+
+if (page === 'a')
+  import(/* webpackChunkName: 'componentA' */
+    '@/components/component.a').then(component => {
+    console.log('异步加载组建A: ', component)
+  })
+else
+  import(/* webpackChunkName: 'componentB' */
+    '@/components/component.b').then(component => {
+    console.log('异步加载组建B: ', component)
+  })
+
 import Axios from 'axios'
 import '@/style.scss'
 import appStyle from '@/app.css'
@@ -27,15 +40,3 @@ document.getElementById('root').innerHTML = `
 // }).catch(function (error) {
 //   console.log(error)
 // })
-
-const page = 'b'
-if (page === 'a')
-  import(/* webpackChunkName: 'componentA' */
-    '@/components/component.a').then(component => {
-      console.log('异步加载组建A: ', component)
-    })
-else
-  import(/* webpackChunkName: 'componentB' */
-    '@/components/component.b').then(component => {
-      console.log('异步加载组建B: ', component)
-    })

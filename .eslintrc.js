@@ -5,8 +5,10 @@ module.exports = {
     "node": true
   },
   "extends": "eslint:recommended",
+  "parser": "babel-eslint",
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
   },
   /**
    * "off" 或 0      关闭规则
@@ -37,7 +39,5 @@ module.exports = {
   "globals": {
     "module": false
   },
-  "plugins": [
-    "import"
-  ]
+  "plugins": []
 };
