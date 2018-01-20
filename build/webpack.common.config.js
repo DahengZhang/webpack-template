@@ -27,7 +27,11 @@ module.exports = {
     new HtmlWebpackPlugin({ // 动态生成 html 文件
       title: 'Webpack',
       template: './index.html',
-      inject: true
+      inject: true,
+      minify: { // 压缩HTML文件
+        removeComments: true, // 移除HTML中的注释
+        collapseWhitespace: true // 删除空白符与换行符
+      }
     })
   ]
 }
