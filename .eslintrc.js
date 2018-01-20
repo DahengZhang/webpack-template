@@ -37,5 +37,7 @@ module.exports = {
   "globals": {
     "module": false
   },
-  "plugins": []
+  "plugins": [
+    "import"
+  ]
 };

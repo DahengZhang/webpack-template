@@ -21,9 +21,21 @@ document.getElementById('root').innerHTML = `
 <div class='${publicStyle.module}'>${text}</div>
 `
 
-Axios.get('/api/test').then(function (response) {
-  console.log('response', response.data)
-  document.getElementById('root').innerHTML = response.data
-}).catch(function (error) {
-  console.log(error)
-})
+// Axios.get('/api/test').then(function (response) {
+//   console.log('response', response.data)
+//   document.getElementById('root').innerHTML = response.data
+// }).catch(function (error) {
+//   console.log(error)
+// })
+
+const page = 'b'
+if (page === 'a')
+  import(/* webpackChunkName: 'componentA' */
+    '@/components/component.a').then(component => {
+      console.log('异步加载组建A: ', component)
+    })
+else
+  import(/* webpackChunkName: 'componentB' */
+    '@/components/component.b').then(component => {
+      console.log('异步加载组建B: ', component)
+    })

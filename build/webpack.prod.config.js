@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const merge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -5,7 +6,8 @@ const common = require('./webpack.common.config.js')
 
 module.exports = merge(common, {
   entry: {
-    app: ['babel-polyfill', './src/app.js']
+    app: ['babel-polyfill', './src/app.js'],
+    vendor: ['axios', 'babel-polyfill']
   },
   module: {
     rules: [
@@ -48,6 +50,15 @@ module.exports = merge(common, {
   },
   plugins: [
     new UglifyJSPlugin(), // 移除上下文中的未引用代码
-    new ExtractTextPlugin('css/[name].bundle.[hash:6].css')
+    new ExtractTextPlugin('css/[name].bundle.[hash:6].css'),
+    new webpack.optimize.CommonsChunkPlugin({
+      async: 'async-common',
+      children: true,
+      minChunks: 2
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor', 'manifest'],
+      minChunks: Infinity
+    })
   ]
 })
