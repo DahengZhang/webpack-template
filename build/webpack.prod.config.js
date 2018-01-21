@@ -50,7 +50,10 @@ module.exports = merge(common, {
   },
   plugins: [
     new UglifyJSPlugin(), // 移除上下文中的未引用代码
-    new ExtractTextPlugin('css/[name].bundle.[hash:6].css'),
+    new ExtractTextPlugin({ // 提取CSS
+      filename: 'css/[name].bundle.[hash:6].css',
+      allChunks: false // 取消打包异步加载的模块
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       async: 'async-common',
       children: true,
