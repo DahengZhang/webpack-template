@@ -14,7 +14,12 @@ module.exports = merge(common, {
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
+          fallback: {
+            loader: 'style-loader',
+            options: {
+              singleton: true
+            }
+          },
           use: [
             {
               loader: 'css-loader',
@@ -31,7 +36,12 @@ module.exports = merge(common, {
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
+          fallback: {
+            loader: 'style-loader',
+            options: {
+              singleton: true
+            }
+          },
           use: [
             {
               loader: 'css-loader',
